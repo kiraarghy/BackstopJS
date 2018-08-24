@@ -111,7 +111,8 @@ function delegateScenarios (config) {
 
   var scenarioViewId = 0;
   scenarios.forEach(function (scenario) {
-    config.viewports.forEach(function (viewport) {
+    const viewports = scenario.viewports || config.viewports;
+    viewports.forEach(function (viewport) {
       scenarioViews.push({
         scenario: scenario,
         viewport: viewport,
